@@ -19,6 +19,8 @@ namespace Garage.Lib
         /// Estrazione dal garage del veicolo che occupa un determinato posto (ritornare l’istanza del veicolo stesso);
         /// </summary>
         /// <param name="placeNumber"></param>
+        /// <exception cref="PlaceAlreadyFreeException"></exception>
+        /// <exception cref="IndexOutOfRangeException"></exception>
         /// <returns></returns>
         Vehicle ExtractVehicle (int placeNumber);
 

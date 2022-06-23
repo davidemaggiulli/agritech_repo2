@@ -28,7 +28,14 @@ namespace Garage.Lib
 
         public Vehicle ExtractVehicle(string plate)
         {
-            throw new NotImplementedException();
+            for(int i = 0;i < places.Length; i++)
+            {
+                if(!places[i].Status && places[i].Vehicle.Plate.Equals(plate, StringComparison.InvariantCultureIgnoreCase)){
+                    return ExtractVehicle(i);
+                }
+            }
+            //Targa non trovato
+            return null;
         }
 
         public Place GetPlace(int pos)
