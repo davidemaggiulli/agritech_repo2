@@ -6,7 +6,7 @@ namespace Garage.Lib
 {
     public class Van : Vehicle
     {
-        public Van(string plate, int year, string fuelType, int displacement, int capacity) : base(plate, year, fuelType, displacement)
+        public Van(string plate, int year, FuelType fuelType, int displacement, int capacity) : base(plate, year, fuelType, displacement)
         {
             Capacity = capacity;
         }
