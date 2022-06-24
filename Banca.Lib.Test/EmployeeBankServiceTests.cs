@@ -58,7 +58,11 @@ namespace Banca.Lib.Test
             Customer customer1 = service.CreateCustomerWithBankAccount("Davide", "Maggiulli", "MGGDVD87H27E815Y", "ITXXXX1223232");
             Customer customer2 = service.CreateCustomerWithBankAccount("Elena", "Ricci", "ELNRCCsffdfd", "ITYYYYq12131");
 
+            Customer customer = service.SearchCustomer("elena", "ricci");
 
+            Assert.NotNull(customer);
+            Assert.Equal("Elena",customer.FirstName);
+            Assert.Equal("Ricci", customer.LastName);
         }
     }
 }

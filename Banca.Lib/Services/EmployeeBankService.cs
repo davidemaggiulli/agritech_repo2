@@ -85,7 +85,7 @@ namespace Banca.Lib.Services
         public Customer SearchCustomer(string fname, string lname)
         {
             foreach (var c in bank.Customers)
-                if (c.FirstName.Equals(fname, StringComparison.InvariantCultureIgnoreCase) && c.FirstName.Equals(lname, StringComparison.InvariantCultureIgnoreCase))
+                if (c.FirstName.Equals(fname, StringComparison.InvariantCultureIgnoreCase) && c.LastName.Equals(lname, StringComparison.InvariantCultureIgnoreCase))
                     return c;
             return null;
         }
