@@ -1,4 +1,5 @@
 ﻿using Banca.Lib.Domain;
+using Banca.Lib.Services;
 using System;
 using System.Collections.Generic;
 
@@ -23,8 +24,17 @@ namespace Banca.App
             employee.Username = "martina.bettoni";
 
             BankAccount bankAccount = new BankAccount(1, "1234", "ITXXXXXXDSDSDS000", customer);
-            
 
+            Bank bank = new Bank();
+            bank.Customers.Add(customer);
+            bank.Employees.Add(employee);
+            bank.BankAccounts.Add(bankAccount);
+
+            IEmployeeBank service = new EmployeeBankService(bank);
+            var ba = service.CreateCustomerWithBankAccount("Filippo", "Del Porto", "MfsdfsGD87H27E815Y", "IT12121");
+            Console.WriteLine(service.GetBankAccountDetails(1));
+            Console.WriteLine(service.GetBankAccountDetails(2));
+            Console.WriteLine(service.GetBankAccountDetails(3));
 
 
         }
