@@ -14,7 +14,6 @@ namespace Banca.App
 
             customer.Birthdate = new DateTime(1987, 6, 27);
 
-            customer.BankAccounts.Add(new BankAccount());
 
             Employee employee = new Employee(1, "Martina", "Nonmiricordo", "GFGFGFGFGF", "martina.bho", "123456");
             employee.Gender = Gender.Female;
@@ -22,9 +21,9 @@ namespace Banca.App
             employee.Phone = "1234534232";
 
             employee.Username = "martina.bettoni";
-            if(employee is Employee)
-                (employee as Employee).Password = "434343";
 
+            BankAccount bankAccount = new BankAccount(1, "1234", "ITXXXXXXDSDSDS000", customer);
+            
 
 
 
